@@ -1,0 +1,40 @@
+﻿<Window x:Class="Library.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="Авторизация" MinHeight="550"  Height="550"   Width="600" MinWidth="600">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="251*"/>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="159*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="268*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="150*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/icon/logo_vis222.png" Grid.Row="0" Grid.ColumnSpan="4" Margin="152,0,161,34" Grid.RowSpan="2"/>
+
+
+        <TextBlock Grid.ColumnSpan="4"  Grid.Row="1" Text="Login" FontSize="16"  Height="AUTO" Margin="152,0,161,0"/>
+        <TextBox  Grid.ColumnSpan="4"  Grid.Row="1" x:Name="tbLogin" Background= "#D6E6F3F3" BorderBrush="#FFEAF5F5" Height="AUTO"  Text="fpurdy@mayert.com" Margin="152,34,161,0" Grid.RowSpan="2"/>
+        <TextBlock  Grid.ColumnSpan="4"  Grid.Row="2" Text="Password" FontSize="16"  Height="AUTO" Margin="152,25,161,0" Grid.RowSpan="2"/>
+
+        <Image MouseLeftButtonUp="Image_MouseLeftButtonUp" Grid.Column="2"  Grid.Row="4" MouseLeftButtonDown="Image_MouseLeftButtonDown" Margin="2,2,2,2" Width="auto"  Source="/icon/207-2073226_show-icon-png-white-password-view-icon.png" OpacityMask="#FFEAF5F5"></Image>
+        <PasswordBox   Grid.Row="3" x:Name="pbPassword" Password="iXz5KZe5g1"  Background= "#FFEAF5F5" BorderBrush="#FFEAF5F5" Height="AUTO" Grid.ColumnSpan="2" Margin="152,25,0,0" Grid.RowSpan="2"  />
+        <TextBlock   Grid.Row="3" Height="AUTO" x:Name="TbPassword" Visibility="Collapsed" Grid.ColumnSpan="2" Margin="152,25,0,0" Grid.RowSpan="2"/>
+
+        <Border  Grid.ColumnSpan="4"  Grid.Row="5" Background="#FF97FFFF" CornerRadius="20"  Margin="152,10,161,97" >
+            <Button x:Name="btnEnter" Content="Enter" Margin="5" Background="#FF97FFFF" BorderBrush="#FF97FFFF" FontSize="16" Click="btnEnter_Click"/>
+        </Border>
+
+    </Grid>
+</Window>

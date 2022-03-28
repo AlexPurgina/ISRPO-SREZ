@@ -1,0 +1,63 @@
+﻿<Page x:Class="Library.Views.Peges.PageReader"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Library.Views.Peges"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageReader" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="46*"/>
+            <ColumnDefinition Width="46*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="397*"/>
+            <ColumnDefinition Width="118*"/>
+            <ColumnDefinition Width="53*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="156*"></RowDefinition>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="6">
+            <ComboBox  x:Name="cbGenre" Style="{DynamicResource ComboBoxStyle1}" MinHeight="30" MinWidth="150" Margin="0,35" DisplayMemberPath="." />
+            <ComboBox x:Name="cbPublisher" Style="{DynamicResource ComboBoxStyle1}" MinHeight="30" MinWidth="150" Margin="15,35" DisplayMemberPath="." />
+            <ComboBox x:Name="cbAuthor" Style="{DynamicResource ComboBoxStyle1}" MinHeight="30" MinWidth="150" Margin="0,35" DisplayMemberPath="." />
+            <GroupBox Header="Дата" Margin="5 15 5 20" >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <DatePicker  Name="dpStart"  />
+                    <DatePicker Name="dpEnd" />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <DataGrid  Grid.Row="1" Grid.Column="1" x:Name="DgReaderBook" Background="#FFDCF6F0" Grid.ColumnSpan="6" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Срок возвращения" Binding="{Binding retDay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Автор Название" Binding="{Binding book.authorTitle}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Издательство" Binding="{Binding book.publisherEx}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество" Binding="{Binding book.height}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Отметка о возвращении">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Path=path}" Width="40" Height="40"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Image x:Name="word"  Grid.Column="1"  Grid.Row="2"  Source="/icon/img_400436 .png" MouseDown="word_MouseDown"/>
+        <Image x:Name="xl" Grid.Column="2"  Grid.Row="2"  Source="/icon/exicon-1024x1024.png" MouseDown="xl_MouseDown"/>
+        <Image x:Name="pdf"  Grid.Column="3"  Grid.Row="2"  Source="/icon/img_210051.png" MouseDown="pdf_MouseDown"/>
+        <Image x:Name="graf" Grid.Column="4"  Grid.Row="2"  Source="/icon/img_99111.png"/>
+        <Image x:Name="back" Grid.Column="6"  Grid.Row="2" HorizontalAlignment="Left"  Source="/icon/returns-3-of-the-margin-1e07d250d5f71c08ba8c529f43576b4f.png" Width="38" MouseDown="back_MouseDown"/>
+        <Image Grid.Column="6"  Grid.Row="2" HorizontalAlignment="Right"  Source="/icon/logo_vis222.png" Width="75"/>
+
+    </Grid>
+   
+</Page>
